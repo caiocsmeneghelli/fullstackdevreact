@@ -20,12 +20,12 @@ export default class JobsCard extends Component {
         const socket = io(process.env.REACT_APP_API_URL);
         socket.on('newjob', newjob => {
             this.setState({ jobs: [newjob, ...this.state.jobs] }); // contatenação
-            this.loadData();
+            //this.loadData();
         });
     }
     componentDidMount() {
         this.registerSocket();
-        //this.loadData();
+        this.loadData();
     }
 
     render() {
